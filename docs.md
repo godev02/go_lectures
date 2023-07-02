@@ -8,3 +8,14 @@ Go - это язык программирования общего назнач�
 таких как интегрированные среды разработки.
 
 # Обозначения
+Синтаксис описывается с использованием варианта расширенной формы Бэкуса-Наура (EBNF):
+```
+Syntax      = { Production } .
+Production  = production_name "=" [ Expression ] "." .
+Expression  = Term { "|" Term } .
+Term        = Factor { Factor } .
+Factor      = production_name | token [ "…" token ] | Group | Option | Repetition .
+Group       = "(" Expression ")" .
+Option      = "[" Expression "]" .
+Repetition  = "{" Expression "}" .
+```
